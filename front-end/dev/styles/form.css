@@ -1,0 +1,26 @@
+.panel-heading {
+  position: relative; }
+  .panel-heading #add-btn {
+    position: absolute;
+    right: 0; }
+
+.panel .save-btn {
+  position: absolute;
+  right: 30px; }
+
+th {
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+td {
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+  td img {
+    display: block !important;
+    width: 30px;
+    height: 40px;
+    margin: 0 auto; }

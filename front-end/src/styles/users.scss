@@ -1,0 +1,23 @@
+.users-con{
+    max-height: 358px;
+    overflow: hidden;
+    .table{
+        caption{
+            color: #fff;
+        }
+        tbody{
+            tr{
+                // display: flex;
+                // overflow: hidden;
+                td{
+                    // min-width: 55px !important;
+                    overflow: hidden;
+                    word-wrap: normal;
+                    text-overflow: ellipsis;
+                    max-width: 200px !important;
+                }
+            }
+           
+        }
+    }
+}

@@ -1,0 +1,33 @@
+.arrow_carrot-right-active {
+  transform: rotateZ(90deg); }
+
+html {
+  margin: 0;
+  padding: 0; }
+  html .move-bg {
+    width: 100%;
+    height: 100%;
+    background: url("../assets/img/demo-2-bg.jpg") no-repeat center bottom/cover fixed;
+    position: absolute;
+    z-index: -1;
+    opacity: 1; }
+    html .move-bg canvas {
+      width: 100%;
+      height: 99% !important; }
+  html .header {
+    opacity: .8; }
+  html aside #sidebar {
+    opacity: .7; }
+  html #top_menu {
+    display: none; }
+  html #main-content .breadcrumb {
+    background: rgba(255, 255, 255, 0.7); }
+  html #main-content .panel {
+    margin-bottom: 0 !important; }
+  html #main-content .move-list-content {
+    max-height: 358px;
+    overflow: hidden; }
+    html #main-content .move-list-content .panel {
+      margin-bottom: 0 !important; }
+  html #wrapper {
+    padding-bottom: 0 !important; }
