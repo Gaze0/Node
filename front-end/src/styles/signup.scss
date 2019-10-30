@@ -1,0 +1,66 @@
+html,body{
+    height: 100%;
+    width: 100%;
+    background: url('../assets/img/bg-1.jpg') no-repeat center center fixed !important;
+    .iziModal{
+        display: block;
+        position: absolute;
+        top: 50px;
+    }
+    #container{
+        overflow: hidden;
+    }
+    form{
+        margin-top: 100px !important;
+        .login-wrap{
+            position: relative;
+            .back{
+                display: none;
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                right: 10px;
+                top: 10px;
+                cursor: pointer;
+            }
+            .email{
+                display: none;
+                .inp-email{
+                    border: none;
+                }
+            }
+            .yan-wrap{
+                .yanzheng{
+                    width: 60%;
+                    height: 42px;
+                    float: left;
+                    box-sizing: border-box;
+                    color: #797979;
+                }
+                .yan-btn{
+                    border: none;
+                    box-sizing: border-box;
+                    padding: 0;
+                    margin: 0 !important;
+                    width: 35%;
+                    height: 42px;
+                    border-radius: 0;
+                    margin-top: 6px;
+                    float: right;
+                    color: #fff;
+                    font-size: 12px;
+                    background-color: #5cb85c;
+                    border-color: #4cae4c;
+                }
+            }
+        }
+        
+        
+    }
+    // .wrap{
+    //     height: 100%;
+    //     width: 100%;
+    //     background: url('../assets/img/bg-1.jpg') no-repeat center center fixed !important;
+    // }
+}
+

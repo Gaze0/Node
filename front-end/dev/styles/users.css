@@ -1,0 +1,10 @@
+.users-con {
+  max-height: 358px;
+  overflow: hidden; }
+  .users-con .table caption {
+    color: #fff; }
+  .users-con .table tbody tr td {
+    overflow: hidden;
+    word-wrap: normal;
+    text-overflow: ellipsis;
+    max-width: 200px !important; }

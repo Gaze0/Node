@@ -1,0 +1,78 @@
+
+    <div class="row move-list-content">
+        <div class="col-lg-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    电影列表
+                    <a class="btn btn-warning btn-sm " href="#/Forms1_add" id="add-btn" title="Bootstrap 3 themes generator">添加电影</a>
+                </header>
+                <table class="table table-striped table-advance table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th><i class="icon_pin_alt"></i>电影海报</th>
+                            <th><i class="icon_mobile"></i>电影名称</th>
+                            <th><i class="icon_mail_alt"></i> 影评</th>
+                            <th><i class="icon_profile"></i> 主演</th>
+                            <th><i class="icon_calendar"></i>上映日期</th>
+                            <th><i class="icon_cogs"></i> Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{each list}}
+                        <tr>
+                            <td>{{$index+1}}</td>
+                            <td><img src="http://placehold.it/60x60"
+                                    alt=""></td>
+                            <td>{{$value.movieName}}</td>
+                            <td>{{$value.score}}</td>
+                            <td>{{$value.star}}</td>
+                            <td>{{$value.showtime}}</td>
+                            <td>
+                                <a class="btn-group">
+                                    <a class="btn btn-primary" href="#"><i class="icon_plus_alt2"></i></a>
+                                    <a class="btn btn-success movie-update" data-id={{$value._id}} href="#/Forms1_update" ><i class="icon_check_alt2"></i></a>
+                                    <a class="btn btn-danger movie-delete" data-id={{$value._id}} ><i class="icon_close_alt2"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                       {{/each}}
+                    </tbody>
+                </table>
+
+            </section>
+            <!-- <div class="btn-row">
+                <div class="btn-toolbar">
+                    <div class="btn-group">
+                        <button class="btn btn-info" type="button">1</button>
+                        <button class="btn btn-info active" type="button">2</button>
+                        <button class="btn btn-info" type="button">3</button>
+                        <button class="btn btn-info" type="button">4</button>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-success" type="button">5</button>
+                        <button class="btn btn-success" type="button">6</button>
+                        <button class="btn btn-success" type="button">7</button>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-warning" type="button">8</button>
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+
+    </div>
+    <div>
+        <ul class="pagination pagination-sm pull-right paging">
+            <li><a href="#" class="btn btn-warning">«</a></li>
+            <li><a href="#" class="btn btn-info">1</a></li>
+            <li><a href="#" class="btn btn-info">2</a></li>
+            <li><a href="#" class="btn btn-info">3</a></li>
+            <li><a href="#" class="btn btn-info">4</a></li>
+            <li><a href="#" class="btn btn-info">5</a></li>
+            <li><a href="#" class="btn btn-warning">»</a></li>
+        </ul>
+    </div>
+
+<!-- page end-->

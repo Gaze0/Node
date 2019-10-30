@@ -1,0 +1,50 @@
+.panel-heading{
+    position: relative;
+    #add-btn{
+        position: absolute;
+        right:0;
+    }
+}
+.panel{
+    .save-btn{
+        position: absolute;
+        right: 30px;
+    }
+   
+}
+
+.paging{
+    margin: 23px 0 0 0;
+    li{
+        .btn-warning{
+            color: #000 !important;
+            background-color: #ffcc00;
+            border-color: #ffcc00 !important;
+        }
+        .btn-info{
+            color: #000 !important;
+            background-color: #4cd964;
+            border-color: #4cd964;
+        }
+    }
+}
+
+th{
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+td{
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    img{
+        display: block !important;
+        width: 30px;
+        height: 40px;
+        margin: 0 auto;
+        
+    }
+}
