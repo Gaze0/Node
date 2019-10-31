@@ -2,7 +2,7 @@ const multer = require('multer')
 const path = require('path')
 const randomstring = require('randomstring')
 // var upload = multer({dest:path.resolve(__dirname,'../public/upload')})
-
+const fs = require('fs')
 // module.exports = ((req,res,next)=>{
 //     return upload.single('poster')
 // })()
@@ -20,7 +20,6 @@ var storage = multer.diskStorage({
     },
     filename:(req,file,cb)=>{
         let { fieldname, mimetype } = file
-        console.log(file)
         filename = fieldname + '-' + randomstring.generate(7)+  mimetypeMap[mimetype]
         cb(null,filename)
     }
@@ -31,7 +30,15 @@ var upload = multer({
 
 module.exports = (req,res,next)=>{
     upload(req,res,(err)=>{
+        if(filename){
+            fs.unlink(path.resolve(__dirname,'../public/upload/'+req.body.poster),(err)=>{
+                if(err){
+                    console.log(err.message)
+                }
+            })
+        }
         req.filename = filename
+        filename = ''
         next()
     })
 }

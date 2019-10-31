@@ -10,6 +10,11 @@ class Layout{
     async render(){
         let html = layoutView()
         $('.root').html(html)
+        // window.onresize = function(){
+        //     if( $('.move-bg').height()<$('body').height()){
+        //         $('.move-bg').height($('body').height())
+        //     }
+        // }
     }
     
 }

@@ -11,16 +11,18 @@
 .form-group {
   margin-bottom: 10px; }
 
-.paging {
-  margin: 23px 0 0 0; }
-  .paging li .btn-warning {
-    color: #000 !important;
-    background-color: #ffcc00;
-    border-color: #ffcc00 !important; }
-  .paging li .btn-info {
-    color: #000 !important;
-    background-color: #4cd964;
-    border-color: #4cd964; }
+.paging li .btn-warning {
+  color: #000 !important;
+  background-color: #ffcc00;
+  border-color: #ffcc00 !important; }
+
+.paging li .btn-info {
+  color: #000 !important;
+  background-color: #4cd964;
+  border-color: #4cd964; }
+
+.active {
+  background-color: #fff; }
 
 th {
   text-align: center;
