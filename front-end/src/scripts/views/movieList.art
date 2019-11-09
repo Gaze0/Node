@@ -17,11 +17,15 @@
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th><i class="icon_pin_alt"></i>id</th>
                         <th><i class="icon_pin_alt"></i>电影海报</th>
                         <th><i class="icon_mobile"></i>电影名称</th>
                         <th><i class="icon_mail_alt"></i> 影评</th>
                         <th><i class="icon_profile"></i> 主演</th>
+                        <!-- <th><i class="icon_calendar"></i>期待人数</th> -->
+                        <th><i class="icon_calendar"></i>Version</th>
                         <th><i class="icon_calendar"></i>上映日期</th>
+                        <th><i class="icon_calendar"></i>播放情况</th>
                         <th><i class="icon_cogs"></i> Action</th>
                     </tr>
                 </thead>
@@ -29,18 +33,21 @@
                     {{each list}}
                     <tr>
                         <td>{{$index+1}}</td>
+                        <td>{{$value.movieId}}</td>
                         {{if $value.poster}}
-                        <td><img src="http://localhost:3000/upload/{{$value.poster}}" alt=""></td>
+                        <td><img src="http://10.9.49.161:3000/upload/{{$value.poster}}" alt=""></td>
                         {{else}}
                         <td><img src="http://placehold.it/60x60" alt=""></td>
                         {{/if}}
-                        <td>{{$value.movieName}}</td>
+                        <td style="text-overflow: ellipsis; white-space: nowrap;max-width: 100px;">{{$value.movieName}}</td>
                         <td>{{$value.score}}</td>
-                        <td>{{$value.star}}</td>
+                        <td style="text-overflow: ellipsis; white-space: nowrap;max-width: 140px;">{{$value.star}}</td>
+                        <!-- <td>{{$value.wish}}</td> -->
+                        <td>{{$value.version}}</td>
                         <td>{{$value.showtime}}</td>
+                        <td style="text-overflow: ellipsis; white-space: nowrap;max-width: 130px;">{{$value.showInfo}}</td>
                         <td>
-                            <div class="btn-group">
-
+                            <div class="btn-group" style="min-width: 80px;">
                                 <a class="btn btn-primary movie-update" data-id={{$value._id}} href="#/Forms1_update"><i
                                         class="icon_check_alt2"></i></a>
                                 <a class="btn btn-danger movie-delete" data-id={{$value._id}}

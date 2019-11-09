@@ -1,50 +1,6 @@
 import signupView from '../views/signup.art'
 import '../../styles/signup.scss'
 import httpModel from '../models/http'
-// import { home } from '../constrollers/layout'
-// import SMERouter from 'sme-router'
-
-// const router = new SMERouter('container')
-// export const sign = (req,res,next)=>{
-//     res.render(signupView())
-//     let clicktype;
-//     $('.btn-info,.btn-primary').on('click',function(){
-//         clicktype = $(this).data('name')
-//     })
-//     $('.btn-info,.btn-primary').on('click',async function(){
-//         let data = $('.form-control').serialize();
-//         let result = await httpModel.get({
-//             url:`/api/users/${clicktype}`,
-//             type:'POST',
-//             data,
-//         })
-//         handleSubmit(result);
-//     })
-//     function handleSubmit(result){
-//         // alert(result.data.message)
-//         if(clicktype === "login"){
-//             if(result.res){
-//                 // console.log(result)
-//                 // $('.btn-info,.btn-primary').find('a').attr('href','#/home')
-//                 // console.log($('.btn-info,.btn-primary').find('a').attr('href'))
-//                 // $('.btn-info,.btn-primary').find('a').on('click',function(){
-//                 //     router.route('/home',home)
-//                 // })
-//                 location.hash = '/home';
-//                 router.route('/home',home)
-//                 // $('.btn-info,.btn-primary').trigger('click')
-//             }
-//             else{
-//                 alert(result.data.message)
-//                 $('.login-form')[0].reset()
-//             }
-//         }
-//         else{
-//             alert(result.data.message)
-//             $('.login-form')[0].reset()
-//         }
-//     }
-// }
 
 
 class signup{
@@ -159,7 +115,8 @@ class signup{
             $('#modal-alert2').iziModal('open');
         }
         if($('input[type="password"]').val()!=''&&$('input[name="username"]').val()!=''){
-            if($('.yanzheng').val()===this.result.data.message){
+            // console.log( $('.yanzheng').val(),(this.result.data.message.substring(3,7)))
+            if($('.yanzheng').val()===(this.result.data.message.substring(3,7))){
                 // console.log(789)
                 let data = $('.form-control').serialize();
                 console.log(data,this.type)
@@ -213,7 +170,11 @@ class signup{
                     width: 600
                 });
                 $('#modal-alert2').iziModal('open');
-               
+                console.log(789789789)
+                $('.yan-btn').attr('disabled',false);
+                $('.yan-btn').css({
+                    opacity:1
+                })
                 $('.login-form')[0].reset()
             }
         }
@@ -222,7 +183,7 @@ class signup{
             if(result.res){
                 $("#modal-alert").iziModal({
                     title: "注册成功",
-                    subtitle: '欢迎来到管理甄艳雪系统',
+                    subtitle: '欢迎来到猫眼管理系统',
                     iconClass: 'icon-check',
                     headerColor: '#5bbd72',
                     width: 600

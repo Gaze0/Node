@@ -1,0 +1,41 @@
+.m {
+  height: 100%;
+  display: flex; }
+  .m .send {
+    flex: 1;
+    height: 100%;
+    position: relative !important; }
+    .m .send .btn-lg {
+      position: absolute;
+      bottom: -50px;
+      right: 20px; }
+  .m .list {
+    margin-left: 10px;
+    width: 40%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; }
+    .m .list .list-group {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.5); }
+      .m .list .list-group .message-list {
+        position: relative;
+        max-height: 100px;
+        display: flex;
+        overflow: hidden;
+        text-overflow: ellipsis; }
+        .m .list .list-group .message-list .list-group-item-heading {
+          font-size: 16px; }
+        .m .list .list-group .message-list .del {
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          margin-top: -15px;
+          width: 46px; }
+        .m .list .list-group .message-list .list-group-item-text {
+          padding-right: 50px;
+          font-size: 12px;
+          flex: 1; }
+        .m .list .list-group .message-list .list-group-item {
+          padding: 0 0 0 20px;
+          max-height: 100px; }

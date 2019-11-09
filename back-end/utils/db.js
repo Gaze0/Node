@@ -12,14 +12,25 @@ const Users = mongoose.model('Users',{
 })
 
 
+const Message = mongoose.model('messages',{
+  message:String,
+  createtime:String
+})
+
 const Positions = mongoose.model('movies',{
+  movieId:Number,
   poster:String,
   movieName:String,
   score:String,
   star:String,
-  showtime:String
+  wish:Number,
+  version:String,
+  showtime:String,
+  showInfo:String,
+  globalReleased:Boolean
 })
 module.exports = {
     Users,
-    Positions
+    Positions,
+    Message
 }

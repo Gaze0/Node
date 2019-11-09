@@ -60,9 +60,8 @@ const hasUsername = async function(req, res, next) {
 const userslogin = async function(req,res,next){
     res.set('Content-Type','application/json;charset=utf-8')
     let {username,password} = req.body
-
+    console.log(username)
     let result = await userModel.findOne({username})
-
     if(result){
         let compareResult = await tools.compare(password,result.password)
         if(compareResult){
@@ -109,20 +108,28 @@ const signout = function(req, res, next) {
     })
   }
 
+function create(){
+    return Math.random().toString();
+}
 
 const email = function(req,res,next){
+    let longVerify = create();
+    console.log(longVerify)
+    let verify = longVerify.substring(3,7);
     let{ email } = req.body;
+    console.log(verify)
+    // req.session.verify = verify;
     // 1366045238@qq.com
     var mailOptions = {
         from: '498438997@qq.com', // 发送者
         to: email, // 接受者,可以同时发送多个,以逗号隔开
-        subject: 'nodemailer2.5.0邮件发送', // 标题
+        subject: '欢迎您注册猫眼管理系统', // 标题
         //text: 'Hello world', // 文本
         html: `<h2>123</h2>`,
         attachments:[
           {
             filename : 'content',
-            content : '123'
+            content : verify
           }
         ]
       };
@@ -137,7 +144,7 @@ const email = function(req,res,next){
         res.set('Content-Type','application/json;charset=utf-8')
         res.render('succ', {
             data: JSON.stringify({
-              message: '123'
+              message: longVerify
             })
           })
        

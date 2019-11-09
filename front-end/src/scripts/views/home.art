@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1>欢迎来到猫眼管理系统</h1>
+        <p>这是一个欢迎界面</p>
+        <p><a class="btn btn-primary btn-lg more" role="button">
+                查看更多内容</a>
+        </p>
+    </div>
+</div>

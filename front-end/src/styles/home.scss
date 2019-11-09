@@ -1,0 +1,15 @@
+
+.jumbotron{
+    opacity: .9;
+    height: 400px;
+    background: url("../assets/img/banner.jpg") no-repeat center;
+    background-size: cover;
+    h1{
+        color: #fff;
+        margin-top: 20px;
+    }
+    p{
+        color:#fff;
+        margin-top: 20px;
+    }
+}

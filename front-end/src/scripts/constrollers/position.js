@@ -33,7 +33,7 @@ async function _handleDeleteClick(req,res,obj){
         }
     })
     if(result.res){
-        res.go('/Forms1_list/' + (req.params.page||1)+ '?t=' + (new Date().getTime()))
+        res.go('/Forms1_list/' + req.params.page+ '?t=' + (new Date().getTime()))
     }
 }
 
@@ -71,13 +71,13 @@ export const form1 = async (req,res,next)=>{
             count
         }
     })
-
-    if(result.data.list.length ===0 &&startPage>1){
-        res.go('/Forms1_list/' + (startPage-1))
-    }
+    
     // console.log(result)
     let pageCount = _.range(1,Math.ceil(result.data.total/count)+1)
     if(result.res){
+        if(result.data.list.length ===0 &&startPage>1){
+            res.go('/Forms1_list/' + (startPage-1))
+        }
         res.render(movieListView({
             list : result.data.list,
             pageCount,

@@ -3,6 +3,7 @@ import * as users from '../constrollers/users'
 import * as myInfo from '../constrollers/myInfo'
 
 import { home } from '../constrollers/home'
+import { announcement } from '../constrollers/announcement'
 import titleView from '../views/title.art'
 import SMERouter from 'sme-router'
 
@@ -16,11 +17,11 @@ router.use((req)=>{
     }else{
         $('#top_menu').hide();
     }
-    // window.onresize = function(){
-    //     if( $('.move-bg').height()<$('body').height()){
-    //         $('.move-bg').height($('body').height())
-    //     }
-    // }
+    window.onresize = function(){
+        if( $('.move-bg').height()<$('body').height()){
+            $('.move-bg').height($('body').height())
+        }
+    }
     let url = req.url.slice(1).split('/')[0].split('?')[0].split('_')[0]
     let BreadcrumbMap = {
         'home':{
@@ -38,6 +39,10 @@ router.use((req)=>{
         'myInfo':{
             level1:'首页',
             level2:'个人信息'
+        },
+        'announcement':{
+            level1:'首页',
+            level2:'发布公告'
         }
     }
     let TitleMap = {
@@ -52,6 +57,9 @@ router.use((req)=>{
         },
         'myInfo':{
             title:'个人信息'
+        },
+        'announcement':{
+            title:'发布公告'
         }
     }
     let LogoMap = {
@@ -66,6 +74,9 @@ router.use((req)=>{
         },
         'myInfo':{
             logo:'fa-user-md'
+        },
+        'announcement':{
+            logo:'icon_documents_alt'
         }
     }
     let html = titleView({
@@ -94,6 +105,8 @@ router.route('/Forms1_list/:page',position.form1)
 router.route('/myInfo',myInfo.myInfo)
 
 router.route('/Users',users.users)
+
+router.route('/announcement',announcement)
 
 router.route('*',(req,res,next)=>{
     res.redirect('/home')

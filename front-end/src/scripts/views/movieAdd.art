@@ -6,7 +6,7 @@
             </header>
             <div class="panel-body">
                 <form role="form" id="add-form" method="post" action="/api/position" enctype="multipart/form-data">
-                    <div class="form-group " >
+                    <div class="form-group col-sm-12" >
                         <label for="poster">电影海报</label>
                         <input type="file" id="poster" name="poster">
                         <p class="help-block" style="font-size: 12px;">请选择电影海报</p>
@@ -15,19 +15,36 @@
                         <label for="poster">电影海报</label>
                         <input type="file" class="form-control" name="poster" id="poster" placeholder="电影海报">
                     </div> -->
-                    <div class="form-group ">
+                    <div class="form-group col-sm-4">
+                        <label for="movieId">电影ID</label>
+                        <input type="text" class="form-control" name="movieId" id="movieId" placeholder="电影ID">
+                    </div>
+                    <div class="form-group col-sm-4">
                         <label for="movieName">电影名称</label>
                         <input type="text" class="form-control" name="movieName" id="moveName" placeholder="电影名称">
                     </div>
-                    <div class="form-group ">
+                    <div class="form-group col-sm-4">
                         <label for="star">主演</label>
                         <input type="text" class="form-control" name="star" id="star" placeholder="主演">
                     </div>
-                    <div class="form-group ">
+                    <div class="form-group col-sm-4">
+                        <label for="wish">期待人数</label>
+                        <input type="text" class="form-control" name="wish" id="wish" placeholder="期待人数">
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label for="version">version</label>
+                        <input type="text" class="form-control" name="version" id="version" placeholder="version">
+                    </div>
+                    <div class="form-group col-sm-4">
                         <label for="showtime">上映日期</label>
                         <input type="text" class="form-control" name="showtime" id="showtime" placeholder="上映日期">
                     </div>
-                    <div class="form-group  ">
+                    <div class="form-group col-sm-4">
+                        <label for="showInfo">上映信息</label>
+                        <input type="text" class="form-control" name="showInfo" id="showInfo" placeholder="上映信息">
+                    </div>
+                    
+                    <div class="form-group  col-sm-8" style="margin-top:25px">
                         <button class="btn btn-default add-cancel" type="button">Cancel</button>
                         <button type="submit" class="btn btn-primary save-btn">save</button>
                     </div>

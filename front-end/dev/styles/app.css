@@ -31,6 +31,8 @@ html {
       margin-bottom: 0 !important; }
   html #wrapper {
     padding-bottom: 0 !important; }
+  html .page-header {
+    margin: 10px 0 5px !important; }
 
 .panel-heading {
   position: relative; }

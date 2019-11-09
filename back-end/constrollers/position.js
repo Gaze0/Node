@@ -1,8 +1,13 @@
-const positionModul = require('../modules/position');
-const userModel = require('../modules/usersMod');
+const positionModul = require('../modules/position')
+const userModel = require('../modules/usersMod')
 const fs = require('fs')
 const path =require('path')
+const moment = require('moment')
 const findAll = async (req,res,next)=>{
+    // res.writeHeader(200,{
+    //     'Content-Type':'application/json;charset=utf-8',
+    //     'Access-Control-Allow-Origin': '*'
+    // })
     res.set('Content-Type','application/json;charset=utf-8')
     let pageInfo = req.query
     let data = await positionModul.findAll(pageInfo)
@@ -44,10 +49,19 @@ const findusersAll = async (req,res,next)=>{
 
 const save = async (req,res,next)=>{
     res.set('Content-Type','application/json;charset=utf-8')
-    // console.log(req.body)
     let data = req.body
+    console.log(data)
     data.score = (Math.random()*5+5).toFixed(1)
     data.poster = req.filename
+    let now = moment().format("YYYYMMDD")
+    console.log(now)
+    let showmovietime =req.body.showtime
+    showmovietime = showmovietime.replace(/-/g,'')
+    if(now>=showmovietime){
+        data.globalReleased = true
+    }else{
+        data.globalReleased = false
+    }
     let result = await positionModul.save(data)
     if(result){
         res.render('succ',{

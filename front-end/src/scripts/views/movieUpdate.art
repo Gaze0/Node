@@ -5,33 +5,49 @@
                 修改电影
             </header>
             <div class="panel-body">
-                <form role="form" id="update-form" enctype="multipart/form-data">
+                <form role="form" id="update-form" enctype="multipart/form-data" style="background: rgba(255,255,255,0.7);">
                     <!-- <div class="form-group">
                             <label for="exampleInputEmail1">电影海报</label>
                             <input type="text" class="form-control" id="exampleInputEmail1" placeholder="电影海报">
                         </div> -->
                    
                     <div class="form-group col-sm-12">
-                            <!-- <img style="width: 60px;height: 60px;" src="http://localhost:3000/upload/{{list.poster}}" alt=""> -->
+                            <img style="width: 60px;height: 80px;" src="http://localhost:3000/upload/{{list.poster}}" alt="">
                         <label style="display: block;" for="poster">电影海报</label>
                         <input type="file" id="poster" name="poster" defaultValue="{{list.poster}}">
                     </div>
-                    <div class="form-group col-sm-12">
+                    <div class="form-group col-sm-4">
+                        <label for="movieId">电影ID</label>
+                        <input type="text" value="{{list.movieId}}" class="form-control" name="movieId" id="movieId" placeholder="电影ID">
+                    </div>
+                    <div class="form-group col-sm-4">
                         <label for="movieName">电影名称</label>
                         <input type="text" value="{{list.movieName}}" class="form-control" name="movieName"
                             id="moveName" placeholder="电影名称">
                     </div>
-                    <div class="form-group col-sm-12">
+                    <div class="form-group col-sm-4">
                         <label for="star">主演</label>
                         <input type="text" value="{{list.star}}" class="form-control" name="star" id="star"
                             placeholder="主演">
                     </div>
-                    <div class="form-group col-sm-12">
+                    <div class="form-group col-sm-4">
+                        <label for="wish">期待人数</label>
+                        <input type="text" value="{{list.wish}}" class="form-control" name="wish" id="wish" placeholder="期待人数">
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label for="version">version</label>
+                        <input type="text" value="{{list.version}}" class="form-control" name="version" id="version" placeholder="version">
+                    </div>
+                    <div class="form-group col-sm-4">
                         <label for="showtime">上映日期</label>
                         <input type="text" value="{{list.showtime}}" class="form-control" name="showtime" id="showtime"
                             placeholder="上映日期">
                     </div>
-                    <div class="form-group col-sm-12">
+                    <div class="form-group col-sm-4">
+                        <label for="showInfo">上映信息</label>
+                        <input type="text" value="{{list.showInfo}}" class="form-control" name="showInfo" id="showInfo" placeholder="上映信息">
+                    </div>
+                    <div class="form-group col-sm-4">
                         <label for="score">影评</label>
                         <input type="text" value="{{list.score}}" class="form-control" name="score" id="score"
                             placeholder="影评">
@@ -39,7 +55,7 @@
                    
                     <input type="hidden" name="id" value="{{list._id}}">
                     <input type="hidden" name="poster" value="{{list.poster}}">
-                    <div class="form-group col-sm-12">
+                    <div class="form-group col-sm-4" style="margin-top:25px">
                         <button class="btn btn-default update-cancel" type="button">Cancel</button>
                         <button type="submit" class="btn btn-primary save-btn">Update</button>
                     </div>

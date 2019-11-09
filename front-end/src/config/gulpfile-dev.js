@@ -30,12 +30,12 @@ function gulpServer(){
         name: 'Dist App',
         root: devPath,
         port: 8090,
-        // host:'10.9.49.161',
+        host:'10.9.49.161',
         livereload: true,
         middleware:()=>{
             return [
                proxy('/api',{
-                target: 'http://localhost:3000',
+                target: 'http://10.9.49.161:3000',
                 changeOrigin:true
             })
             ]
@@ -93,6 +93,11 @@ function copyIcons(){
     .pipe(dest(`${devPath}/assets/img`))
 }
 
+function copyFonts(){
+    return src('../assets/fonts/**/*')
+    .pipe(dest(`${devPath}/assets/fonts`))
+}
+
 function watchFiles(){
     watch('../*.html',series(copyHTML))
     watch('..assets/libs/*', series(copylibs))
@@ -100,4 +105,4 @@ function watchFiles(){
     watch('../**/*.scss', series(packSCSS))
 }
 
-exports.default = series(parallel(copyHTML,packSCSS,packJS,copylibs,copyAssets,copyIcons),parallel(gulpServer,watchFiles));
+exports.default = series(parallel(copyHTML,packSCSS,packJS,copylibs,copyAssets,copyIcons,copyFonts),parallel(gulpServer,watchFiles));

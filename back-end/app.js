@@ -9,6 +9,7 @@ var authMiddleware = require('./middleware/auth')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var positionRouter = require('./routes/position');
+var messageRouter = require('./routes/message');
 var app = express();
 
 // view engine setup
@@ -37,6 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/position',authMiddleware,positionRouter)
+app.use('/api/message',authMiddleware,messageRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

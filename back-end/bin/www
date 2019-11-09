@@ -8,12 +8,16 @@ var app = require('../app');
 var debug = require('debug')('back-end:server');
 var http = require('http');
 
+const messageModule = require('../modules/message')
+const moment = require('moment')
+
 /**
  * Get port from environment and store in Express.
  */
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
+const hostname='10.9.49.161'
 
 /**
  * Create HTTP server.
@@ -21,11 +25,35 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
+var io = require('socket.io').listen(server);
+
+io.on('connection', function (socket) {
+  // setInterval(function () {
+  //   socket.emit('list', 'abc')
+  // }, 1000)
+  // socket.broadcast.emit('list', 'test');
+  // socket.on('backend', (msg) => {
+  //   console.log(msg);
+  // })
+
+  socket.on('receive', async (msg,res,req) => {
+    let reg= new RegExp('<[^<>]+>','g');
+    msg = msg.replace(reg,'')
+    socket.broadcast.emit('message', msg);
+    let data = {}
+    data.message = msg
+    let now = moment().format("YYYY-MM-DD,HH:mm:ss")
+    data.createtime = now
+    let result = await messageModule.save(data)
+  })
+});
+
+
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+server.listen(port,hostname);
 server.on('error', onError);
 server.on('listening', onListening);
 

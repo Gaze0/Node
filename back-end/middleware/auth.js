@@ -9,6 +9,7 @@ const isSignin = async function(req,res,next){
     res.set('Content-Type','application/json;charset=utf-8')
     // console.log(req.path,req.get('X-Access-Token'))
     // let token = req.get('X-Access-Token')
+    console.log(req.cookies)
     let {token,username} = req.cookies
     let decoded = await tools.verifyToken(token)
     
