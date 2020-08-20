@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "art-template": "^4.13.2",
-    "bcrypt": "^1.0.3",
+    "bcrypt": "^5.0.0",
     "express-art-template": "^1.0.1",
     "mongoose": "^5.7.6"
   }
